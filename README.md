@@ -11,3 +11,9 @@ Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University.
 | [Muhammad Rafly Hamka](https://www.instagram.com/yohanes_nick/) | 1202204136 | Programmer |
 | [Resti Pradita Utami](https://www.instagram.com/yohanes_nick/) | 1202204242 | Programmer |
 | [Riski Alfika Sari](https://www.instagram.com/yohanes_nick/) | 1202200023 | Analyst |
+
+#Installation
+##Prequisites
+- Composer
+- PHP >= 8
+- XAMPP or MAMP
