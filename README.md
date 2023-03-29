@@ -12,7 +12,7 @@ Group 227 from class SI-44-02, Information Systems Study Program, Telkom Univers
 | [Resti Pradita Utami](https://www.instagram.com/resttam23/) | 1202204242 | Programmer |
 | [Riski Alfika Sari](https://www.instagram.com/riskialff/) | 1202200023 | Analyst |
 
-# Repository Structure
+## Repository Structure
 
 This repository is structured as follows:
 
@@ -22,7 +22,7 @@ This repository is structured as follows:
 - `resources/views/layout/`: contains the views and templates for the admin dashboard page layout.
 
 ## Installation
-# Prequisites
+## Prequisites
 - Composer
 - PHP >= 8
 - XAMPP or MAMP
