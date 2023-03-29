@@ -18,7 +18,7 @@ Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University.
 - PHP >= 8
 - XAMPP or MAMP
 
-## Running the aplication
+## Running the application
 Copy the command on your terminal or git bash
 - Clone project from github
 
