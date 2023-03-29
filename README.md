@@ -23,4 +23,40 @@ Copy the command on your terminal or git bash
 - Clone project from github
 
    ```sh
-   git clone https://github.com/SI-RPL-2023/SI4402_227_FeelBatter.git 
+   git clone https://github.com/SI-RPL-2023/SI4402_227_FeelBetter.git 
+
+- Copy the .env.example file to .env
+
+   ```sh
+   cp .env.example .env
+
+- Change the database name in the .env file
+
+   ```sh
+   DB_PORT=your_mysql_port
+   DB_DATABASE=your_database_name
+
+- Install Composer
+
+   ```sh
+   composer install
+
+- Generate Key
+
+   ```sh
+   php artisan key:generate
+
+- Migrate Database
+
+   ```sh
+   php artisan migrate
+   
+- Link Storage
+
+   ```sh
+   php artisan storage:link
+
+- Run the server
+
+   ```sh
+    php artisan serve
