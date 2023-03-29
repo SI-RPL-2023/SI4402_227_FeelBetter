@@ -1,8 +1,8 @@
 # FeelBetter
-Website menyediakan konsultasi,edukasi dan meditasi dengan para terapis atau ahli dalam bidang gangguan kesehatan mental.Project ini dibangun menggunakan framework yang bernama [Laravel](https://laravel.com/) 
+The website provides consultation, education and meditation with therapists or experts in the field of mental health disorders. This project was built using a framework called [Laravel](https://laravel.com/) 
 
 ## About Us
-Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University. Terdiri dari 6 member yang meliputi :
+Group 227 from class SI-44-02, Information Systems Study Program, Telkom University. Consists of 6 members which include:
 | Nama | NIM | Role |
 | ------ | ------ | ------ |
 | [Yohanes Nico Kristiawan](https://www.instagram.com/yohanes_nick/) | 1202204074 | Project Manager |
@@ -11,6 +11,13 @@ Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University.
 | [Muhammad Rafly Hamka](https://www.instagram.com/hamka_rafly/) | 1202204136 | Programmer |
 | [Resti Pradita Utami](https://www.instagram.com/resttam23/) | 1202204242 | Programmer |
 | [Riski Alfika Sari](https://www.instagram.com/riskialff/) | 1202200023 | Analyst |
+
+## Repository Structure
+The repository is structured as follow:
+'app/http/controllers/AdminController' for all the crud processes on the admin page
+'resource/views/back-end' for the develop admin back-end section
+'resource/views/layout' for the admin dashboard page templating
+'resource/views/front-end' for developing the front page of the user
 
 ## Installation
 ## Prequisites
