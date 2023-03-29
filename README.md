@@ -22,7 +22,7 @@ This repository is structured as follows:
 - `resources/views/layout/`: contains the views and templates for the admin dashboard page layout.
 
 ## Installation
-## Prequisites
+# Prequisites
 - Composer
 - PHP >= 8
 - XAMPP or MAMP
