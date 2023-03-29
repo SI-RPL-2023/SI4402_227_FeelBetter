@@ -17,3 +17,10 @@ Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University.
 - Composer
 - PHP >= 8
 - XAMPP or MAMP
+
+## Running the aplication
+Copy the command on your terminal or git bash
+- Clone project from github
+
+   ```sh
+   git clone https://github.com/SI-RPL-2023/SI4402_227_FeelBatter.git 
