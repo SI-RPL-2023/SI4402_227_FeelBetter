@@ -12,12 +12,14 @@ Group 227 from class SI-44-02, Information Systems Study Program, Telkom Univers
 | [Resti Pradita Utami](https://www.instagram.com/resttam23/) | 1202204242 | Programmer |
 | [Riski Alfika Sari](https://www.instagram.com/riskialff/) | 1202200023 | Analyst |
 
-## Repository Structure
-The repository is structured as follow:
-'app/http/controllers/AdminController' for all the crud processes on the admin page
-'resource/views/back-end' for the develop admin back-end section
-'resource/views/layout' for the admin dashboard page templating
-'resource/views/front-end' for developing the front page of the user
+# Repository Structure
+
+This repository is structured as follows:
+
+- `app/Http/Controllers/`: contains the `AdminController` class for handling all the CRUD operations on the admin page.
+- `resources/views/back-end/`: contains the views and templates for developing the admin back-end section.
+- `resources/views/front-end/`: contains the views and templates for developing the front-end pages for the users.
+- `resources/views/layout/`: contains the views and templates for the admin dashboard page layout.
 
 ## Installation
 ## Prequisites
