@@ -7,10 +7,10 @@ Grup 227 dari kelas SI-44-02, Program Studi Sistem Informasi, Telkom University.
 | ------ | ------ | ------ |
 | [Yohanes Nico Kristiawan](https://www.instagram.com/yohanes_nick/) | 1202204074 | Project Manager |
 | [Ignatius Chris Surya](https://www.instagram.com/ignchrist/) | 1202200002 | Programmer |
-| [Eriko Putra Jayanto](https://www.instagram.com/yohanes_nick/) | 1202200209 | Programmer |
-| [Muhammad Rafly Hamka](https://www.instagram.com/yohanes_nick/) | 1202204136 | Programmer |
-| [Resti Pradita Utami](https://www.instagram.com/yohanes_nick/) | 1202204242 | Programmer |
-| [Riski Alfika Sari](https://www.instagram.com/yohanes_nick/) | 1202200023 | Analyst |
+| [Eriko Putra Jayanto](https://www.instagram.com/erikoputraj/) | 1202200209 | Programmer |
+| [Muhammad Rafly Hamka](https://www.instagram.com/hamka_rafly/) | 1202204136 | Programmer |
+| [Resti Pradita Utami](https://www.instagram.com/resttam23/) | 1202204242 | Programmer |
+| [Riski Alfika Sari](https://www.instagram.com/riskialff/) | 1202200023 | Analyst |
 
 ## Installation
 ## Prequisites
