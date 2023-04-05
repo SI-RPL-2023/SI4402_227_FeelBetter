@@ -11,7 +11,9 @@
             <a class="nav-link me-4" href="#service">Service</a>
             <a class="nav-link me-4" href="#about">about</a>
         </div>
-        <button type="button" class="btn btn-primary btn-daftar">Daftar</button>
+        @guest
+        <button type="button" class="btn btn-primary btn-daftar"  onclick="event.preventDefault(); location.href='{{ url('register') }}';">Daftar</button>
+        @endguest
     </div>
   </div>
 </nav>

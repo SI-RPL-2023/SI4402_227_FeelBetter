@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// controller halaman login
+Route::get('/register', [AuthController::class, 'register']);
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/LoginAdmin', [AuthController::class, 'loginAdmin']);
+
+
+// controller halaman admin
 Route::get('/admin/dashboard', [AdminController::class, 'Dashboard']);
 Route::get('/admin/listAdmin', [AdminController::class, 'listAdmin']);
 Route::get('/admin/listUser', [AdminController::class, 'listUser']);
