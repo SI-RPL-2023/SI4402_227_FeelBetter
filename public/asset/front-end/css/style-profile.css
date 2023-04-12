@@ -1,0 +1,88 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.navbar {
+    border-bottom: 1px solid #bcbcbc;
+    padding-bottom: 16px;
+}
+
+.navbar-brand {
+    color: #4049d7 !important;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #878787 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #4049d7 !important;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    font-weight: bold;
+}
+
+
+
+
+
+#head {
+    display: flex;
+}
+#profil {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; 
+}
+
+#profile {
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #555;
+}
+#settings-button {
+    background-color: transparent;
+    color: #555;
+    border-radius: 10px 5px 5px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  #logout-button {
+    background-color: red;
+    color: #eee;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  #section {
+    display: flex;
+    height: 100vh;
+  }
+
+  #sidebar {
+    width: 200px;
+    background-color: #eee;
+    padding: 20px;
+  }
+  #main {
+        flex: 1;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+.card-profil {
+    padding: 10px;
+}
+

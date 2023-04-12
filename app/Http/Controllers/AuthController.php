@@ -15,4 +15,7 @@ class AuthController extends Controller
     public function loginAdmin(){
         return view('pages.front-end.Loginadmin');
     }
+    public function profil(){
+        return view('pages.front-end.profile');
+    }
 }

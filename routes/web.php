@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/LoginAdmin', [AuthController::class, 'loginAdmin']);
+Route::get('/profil', [AuthController::class, 'profil']);
 
 
 // controller halaman admin
