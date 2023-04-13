@@ -20,44 +20,66 @@
                   </ul>
               </div>
             </div>
-            <div id="button-container">
-                <button id="settings-button" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown me-3">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-cog me-2" aria-hidden="true"></i>
                     Pengaturan
                   </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action 1</a></li>
-                    <li><a class="dropdown-item" href="#">Action 1</a></li>
-                    <li><a class="dropdown-item" href="#">Action 1</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
                   </ul>
-              <button id="logout-button" class="btn btn-secondary">Keluar</button>
-            </div> 
+                </div>
+              <button class="btn btn-danger btn-log-profile">Keluar</button>
         </div>
         </div>
     </div>
 
-    <section class="card-profil; container mt-4">
-      <div class="card" style="width: 18rem;">
-          <div class="container mt-4">
-            <img class="card-img-top" src="{{url('asset/front-end/img/foto profil.jpeg')}}" alt="Card image cap">
-            <h5 style="padding: 10px; text-align: center;" class="card-title">Yohanes Nico Kristiawan</h5>
-            <p style="text-align: center;" class="card-text">Pasien, yohanesnico50@gmail.com</p>
-            <div style="padding: 10px; float: left;"class="column">
-              <a href="#" class="btn btn-left btn-primary">Verifikasi Profil</a>
+    <section class="card-profil container mt-4">
+      <div class="card" style="width: 355px;">
+            <div class="card-top text-center pt-3 pb-3 rounded-top" style="background: rgba(64, 73, 215, 0.7);">
+              <img src="{{url('asset/front-end/img/foto profil.jpeg')}}" class="card-img-top img-thumbnail rounded-circle m-auto " alt="profile image" style="width: 100px; height:100px;">
+              <h1 class="fs-4 text-white fw-bold mt-3 text-center">Yohanes Nico Kristiawan</h1>
+              <span class="text-center text-white fw-light">Pasien, yohanesnico50@gmail.com</span>
+              <div class="d-flex justify-content-center">
+                <button class="btn btn-primary d-block mt-2 me-2" data-bs-toggle="modal" data-bs-target="#modalVerifikasi">Verifikasi profile</button>
+                <button class="btn btn-outline-light d-block mt-2" data-bs-toggle="modal" data-bs-target="#modalSettingProfile">Pengaturan</button>
+              </div>
+            </div>    
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center">
+                  <i class="fa fa-calendar fa-lg text-secondary me-2" aria-hidden="true"></i>
+                  <span class="fs-6 fw-regular text-secondary">Usia</span>
+                </div>
+                <h6 class="m-0 text-dark fw-bold">44 tahun</h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-weight-scale text-secondary me-2"></i>
+                  <span class="fs-6 fw-regular text-secondary me-5">Berat Badan</span>
+                </div>
+                <h6 class="m-0 text-dark fw-bold">86 Kg</h6>
+              </div>
+               <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-arrow-up-wide-short text-secondary me-2"></i>
+                  <span class="fs-6 fw-regular text-secondary me-5">Tinggi Badan</span>
+                </div>
+                <h6 class="m-0 text-dark fw-bold">181 CM</h6>
+              </div>
             </div>
           </div>
-            <div class="card-body">
-              <div style="padding: 10px; float: left;"class="column">
-                <p>Usia</p>
-                <p>Berat badan</p>
-                <p>Tinggi Badan</p>
-              </div>
-              <div style="padding: 10px; float: right;" class="column">
-                <p>44 tahun</p>
-                <p>86 kg</p>
-                <p>185 cm</p>
-              </div>
-            </div>
-      </div>
     </section>
+
+    <!-- modal verifikasi profile -->
+    @include('parts.user.modalVerifikasiProfile')
+    <!-- end modal verifikasi profile -->
+
+    <!-- modal pengaturan profile -->
+    @include('parts.user.modalPengaturanProfile')
+    <!-- end modal pengaturan profile -->
+    
 
     @endsection

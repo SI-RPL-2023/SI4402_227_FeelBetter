@@ -26,9 +26,11 @@ body {
     font-weight: bold;
 }
 
-
-
-
+.btn-log-profile {
+    width: 140px;
+    height: 40px;
+    background: #f83521 !important;
+}
 
 #head {
     display: flex;
@@ -41,7 +43,7 @@ body {
     margin: 20px;
     font-size: 20px;
     font-weight: bold;
-    color: #333; 
+    color: #333;
 }
 
 #profile {
@@ -50,39 +52,23 @@ body {
     background-color: transparent;
     color: #555;
 }
-#settings-button {
-    background-color: transparent;
-    color: #555;
-    border-radius: 10px 5px 5px 10px;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  #logout-button {
-    background-color: red;
-    color: #eee;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-  }
-  #section {
+
+#section {
     display: flex;
     height: 100vh;
-  }
+}
 
-  #sidebar {
+#sidebar {
     width: 200px;
     background-color: #eee;
     padding: 20px;
-  }
-  #main {
-        flex: 1;
-        background-color: #fff;
-        padding: 10px;
-      }
+}
+#main {
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+}
 
 .card-profil {
     padding: 10px;
 }
-
