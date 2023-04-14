@@ -32,8 +32,23 @@ body {
     background-color: #4049d7 !important;
     color: #fff;
 }
+
 .btn-daftar:hover {
     width: 121px;
+    height: 44px;
+    background-color: #404ad7eb !important;
+    color: #fff;
+}
+
+.btn-profile {
+    width: 171px;
+    height: 44px;
+    background-color: #4049d7 !important;
+    color: #fff;
+}
+
+.btn-profile:hover {
+    width: 171px;
     height: 44px;
     background-color: #404ad7eb !important;
     color: #fff;

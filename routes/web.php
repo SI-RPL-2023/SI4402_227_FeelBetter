@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,15 @@ Route::get('/', function () {
 
 // controller halaman login
 Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'userRegister']);
 Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'cekLoginUser']);
 Route::get('/LoginAdmin', [AuthController::class, 'loginAdmin']);
-Route::get('/profil', [AuthController::class, 'profil']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+
+// controller halaman user(pasien/terapis)
+Route::get('/profil', [UserController::class, 'profile']);
 
 
 // controller halaman admin

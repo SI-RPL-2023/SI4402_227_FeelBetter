@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'id_role',
+        'phone_number',
+        
     ];
 
     /**
@@ -41,4 +44,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->belongsTo(Role::class, 'id_role', 'id');
+    }
+    public function isPasien() {
+    if (auth()->check()) {
+        return $this->role()->where('name', 'pasien')->exists();
+    }
+        return false; 
+    }
+    public function isTerapis() {
+    if (auth()->check()){
+        return $this->role()->where('name', 'terapis')->exists();
+    }
+        return false; 
+    }
 }

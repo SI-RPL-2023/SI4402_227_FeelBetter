@@ -35,13 +35,12 @@
         </div>
         </div>
     </div>
-
     <section class="card-profil container mt-4">
       <div class="card" style="width: 355px;">
             <div class="card-top text-center pt-3 pb-3 rounded-top" style="background: rgba(64, 73, 215, 0.7);">
               <img src="{{url('asset/front-end/img/foto profil.jpeg')}}" class="card-img-top img-thumbnail rounded-circle m-auto " alt="profile image" style="width: 100px; height:100px;">
-              <h1 class="fs-4 text-white fw-bold mt-3 text-center">Yohanes Nico Kristiawan</h1>
-              <span class="text-center text-white fw-light">Pasien, yohanesnico50@gmail.com</span>
+              <h1 class="fs-4 text-white fw-bold mt-3 text-center">{{Auth::user()->name}}</h1>
+              <span class="text-center text-white fw-light">{{Auth::user()->role->name}}, {{Auth::user()->email}}</span>
               <div class="d-flex justify-content-center">
                 <button class="btn btn-primary d-block mt-2 me-2" data-bs-toggle="modal" data-bs-target="#modalVerifikasi">Verifikasi profile</button>
                 <button class="btn btn-outline-light d-block mt-2" data-bs-toggle="modal" data-bs-target="#modalSettingProfile">Pengaturan</button>
@@ -72,7 +71,6 @@
             </div>
           </div>
     </section>
-
     <!-- modal verifikasi profile -->
     @include('parts.user.modalVerifikasiProfile')
     <!-- end modal verifikasi profile -->
