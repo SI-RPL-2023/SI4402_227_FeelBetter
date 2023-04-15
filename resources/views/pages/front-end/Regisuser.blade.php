@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="/updateProfile" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="align-self-center mb-3">
                     <i class="fa fa-hospital fa-2x me-3" style="color: #4049D7"></i>

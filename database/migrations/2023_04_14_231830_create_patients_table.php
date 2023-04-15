@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('foto_profile', 50);
             $table->string('nama_lengkap', 50);
             $table->date('tanggal_lahir');
+            $table->string('foto_ktp');
             $table->string('NIK');
             $table->string('jenis_kelamin');
             $table->string('nomor_telpon');

@@ -31,6 +31,8 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 // controller halaman user(pasien/terapis)
 Route::get('/profil', [UserController::class, 'profile']);
+Route::post('/verifikasiProfile', [UserController::class, 'verifikasiProfile']);
+Route::put('/updateProfile', [UserController::class, 'updateProfile']);
 
 
 // controller halaman admin

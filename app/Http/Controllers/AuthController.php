@@ -29,7 +29,6 @@ class AuthController extends Controller
         } else {
             $roleId = 3;
         }
-
         $RegisterUser = User::create([
             'name' => $request->name,
             'email' => $request->email,
