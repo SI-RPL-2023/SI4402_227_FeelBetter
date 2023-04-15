@@ -12,7 +12,14 @@ class UserController extends Controller
 {
     public function profile(){
         $infoProfile = Patient::where('email', Auth::user()->email)->first();
-        return view('pages.front-end.profile', compact(['infoProfile']));
+        $umur = null;
+        if(!empty($infoProfile->tanggal_lahir)) {
+            $tanggal_lahir = $infoProfile->tanggal_lahir;
+            $tanggal_sekarang = date('Y-m-d');
+            $diff = date_diff(date_create($tanggal_lahir), date_create($tanggal_sekarang));
+            $umur = $diff->y;
+        }
+return view('pages.front-end.profile', compact('infoProfile', 'umur'));
     }
     public function verifikasiProfile(Request $request){
         // upload foto KTP

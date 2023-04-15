@@ -65,29 +65,35 @@
                 <button class="btn btn-outline-light d-block mt-2" data-bs-toggle="modal" data-bs-target="#modalSettingProfile">Pengaturan</button>
               </div>
             </div>    
-            <!-- <div class="card-body">
+            <div class="card-body">
+              @if(!empty($infoProfile->tanggal_lahir))
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="d-flex align-items-center">
                   <i class="fa fa-calendar fa-lg text-secondary me-2" aria-hidden="true"></i>
                   <span class="fs-6 fw-regular text-secondary">Usia</span>
                 </div>
-                <h6 class="m-0 text-dark fw-bold">testing</h6>
+                <h6 class="m-0 text-dark fw-bold">{{ $umur }} tahun</h6>
               </div>
+              @endif
+              @if(!empty($infoProfile->berat_badan))
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="d-flex align-items-center">
                   <i class="fa-solid fa-weight-scale text-secondary me-2"></i>
                   <span class="fs-6 fw-regular text-secondary me-5">Berat Badan</span>
                 </div>
-                <h6 class="m-0 text-dark fw-bold">testing</h6>
+                <h6 class="m-0 text-dark fw-bold">{{ $infoProfile->berat_badan }}</h6>
               </div>
+              @endif
+              @if(!empty($infoProfile->tinggi_badan))
                <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="d-flex align-items-center">
                   <i class="fa-solid fa-arrow-up-wide-short text-secondary me-2"></i>
                   <span class="fs-6 fw-regular text-secondary me-5">Tinggi Badan</span>
                 </div>
-                <h6 class="m-0 text-dark fw-bold">181 CM</h6>
+                <h6 class="m-0 text-dark fw-bold">{{ $infoProfile->tinggi_badan }}</h6>
               </div>
-            </div> -->
+              @endif
+            </div>
           </div>
     </section>
     <!-- modal verifikasi profile -->
