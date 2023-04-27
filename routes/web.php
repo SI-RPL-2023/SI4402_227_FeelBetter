@@ -33,6 +33,10 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profil', [UserController::class, 'profile']);
 Route::post('/verifikasiProfile', [UserController::class, 'verifikasiProfile']);
 Route::put('/updateProfile', [UserController::class, 'updateProfile']);
+Route::get('/artikelTertulis', [UserController::class, 'artikelTertulis']);
+Route::get('/tulisArtikel', [UserController::class, 'tulisArtikel']);
+Route::post('/tulisArtikel', [UserController::class, 'postArticles']);
+Route::get('/artikel/{id}', [UserController::class, 'bacaArtikel']);
 
 
 // controller halaman admin

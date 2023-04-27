@@ -23,10 +23,17 @@
                 <input type="date" class="form-control" name="tanggal_lahir">
               @endif
             </div>
+            @if(Auth::user()->role->name == 'Pasien')
              <div class="mb-3">
               <label class="form-label">NIK</label>
               <input type="text" class="form-control" name="NIK" placeholder="{{ $infoProfile ? 'Silahkan upload foto KTP...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->NIK : '' }}">
             </div>
+            @else
+            <div class="mb-3">
+              <label class="form-label">Nomor STR</label>
+              <input type="text" class="form-control" name="nomor_str" placeholder="{{ $infoProfile ? 'Silahkan upload Surat STR...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->nomor_str : '' }}">
+            </div>
+            @endif
             <div class="mb-3">
               <label class="form-label mb-3" >Jenis kelamin</label><br>
                 @if(!empty($infoProfile->jenis_kelamin))
@@ -42,11 +49,11 @@
                 </div>
               @else
                 <div class="form-check form-check-inline mb-3">
-                    <input class="form-check-input" type="radio" name="gender" value="Laki-laki">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" value="Laki-laki">
                     <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                 </div>
                 <div class="form-check form-check-inline mb-3">
-                    <input class="form-check-input" type="radio" name="gender" value="Perempuan">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" value="Perempuan">
                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                 </div>
               @endif 
@@ -75,10 +82,17 @@
                 <input type="text" class="form-control" name="tinggi_badan" placeholder="masukan tinggi badan...">
               @endif
             </div>
+             @if(Auth::user()->role->name == 'Pasien')
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Upload KTP (PNG/JPG/JPEG)</label>
               <input type="file" class="form-control" name="foto_ktp">
             </div>
+            @else
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Upload Surat STR (PNG/JPG/JPEG)</label>
+              <input type="file" class="form-control" name="surat_str">
+            </div>
+             @endif
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save changes</button>

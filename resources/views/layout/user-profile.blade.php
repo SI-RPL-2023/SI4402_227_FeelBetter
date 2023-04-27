@@ -30,5 +30,24 @@
 </header>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/6a4ade49be.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/6a4ade49be.js" crossorigin="anonymous"></script>
+<!-- Load TinyMCE -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Initialize TinyMCE -->
+<script>
+  tinymce.init({
+    selector: '#myTextarea',
+    plugins: 'textcolor lists',
+    toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | numlist bullist | link image | code',
+    menubar: false
+  });
+  // Add event listener to the form submit button
+  document.getElementById('submitBtn').addEventListener('click', function() {
+    tinymce.triggerSave(); // Save content before form submit
+  });
+</script>
+
+
 </body>
 </html>

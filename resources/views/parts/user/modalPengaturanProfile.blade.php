@@ -24,10 +24,17 @@
                 <input type="date" class="form-control" name="tanggal_lahir" placeholder="Masukan tanggal lahir...">
               @endif
             </div>
+             @if(Auth::user()->role->name == 'Pasien')
             <div class="mb-3">
               <label class="form-label">NIK</label>
               <input type="text" class="form-control" name="NIK" disabled readonly placeholder="{{ $infoProfile ? 'Silahkan upload foto KTP...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->NIK : '' }}">
             </div>
+            @else
+            <div class="mb-3">
+              <label class="form-label">Nomor STR</label>
+              <input type="text" class="form-control" name="nomor_str" disabled readonly placeholder="{{ $infoProfile ? 'Silahkan upload Surat STR...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->NIK : '' }}">
+            </div>
+            @endif
             <div class="mb-3">
               <label class="form-label mb-3">Jenis kelamin</label><br>
               @if(!empty($infoProfile->jenis_kelamin))

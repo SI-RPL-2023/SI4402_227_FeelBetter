@@ -6,34 +6,25 @@
     </div>
     <!-- end  navbar -->
 
-    <div id="head" class="container mt-4">
-            <div id="main">
-              <div>
-                <a> Profil :</a>
-                <button id="profile" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{Auth::user()->name}}
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action 1</a></li>
-                    <li><a class="dropdown-item" href="#">Action 2</a></li>
-                    <li><a class="dropdown-item" href="#">Action 3</a></li>
-                  </ul>
-              </div>
-            </div>
-                <div class="dropdown me-3">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-cog me-2" aria-hidden="true"></i>
-                    Pengaturan
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </div>
-              <button class="btn btn-danger btn-log-profile" onclick="event.preventDefault(); location.href='{{ url('logout') }}';">Keluar</button>
-        </div>
-        </div>
+    <div id="head" class="container mt-3 d-flex justify-content-center align-items-center">
+      <div id="main">
+        <h5 class="fw-light">
+          Profil: <span class="fw-bold" style="letter-spacing: 0.07rem; color: #434242;">{{Auth::user()->name}}</span>
+        </h5>
+      </div>
+      @if(Auth::user()->role->name == 'Terapis')
+      <div class="dropdown me-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-book me-2" aria-hidden="true"></i>
+            Artikel mu
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/artikelTertulis">Artikel tertulis</a></li>
+            <li><a class="dropdown-item" href="/tulisArtikel">Tulis artikel</a></li>
+          </ul>
+      </div>
+      @endif
+        <button class="btn btn-danger btn-log-profile" onclick="event.preventDefault(); location.href='{{ url('logout') }}';">Keluar</button>
     </div>
     <div class="container">
     @if(Session::has('status'))
@@ -50,7 +41,7 @@
         @endif
     @endif
     </div>
-    <section class="card-profil container mt-4">
+    <section class="card-profil container mt-3">
       <div class="card" style="width: 355px;">
             <div class="card-top text-center pt-3 pb-3 rounded-top" style="background: rgba(64, 73, 215, 0.7);">
             @if(Auth::user()->role->name == 'Terapis')
