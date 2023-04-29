@@ -155,4 +155,7 @@ class UserController extends Controller
         $bacaArtikel = Article::find($id);
         return view('pages.front-end.bacaArtikel', compact(['bacaArtikel']));
     }
+    public function contactUs(){
+        return view('pages.front-end.contactUs');
+    }
 }

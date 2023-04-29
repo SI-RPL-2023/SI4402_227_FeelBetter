@@ -34,7 +34,7 @@
             <h4 class="fw-bold fs-3 d-flex align-items-center summary">20+ <span class="fw-light fs-5 text-black ps-1">awards received</span></h4>
           </div>
           <div class="col-sm-3 d-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary btn-contact ">Contact Us</button>
+          <button type="button" class="btn btn-primary btn-daftar"  onclick="event.preventDefault(); location.href='{{ url('contactUs') }}';">contact us</button>
           </div>
         </div>
       </div>
