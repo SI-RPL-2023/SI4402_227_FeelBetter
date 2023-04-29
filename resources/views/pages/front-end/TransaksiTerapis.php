@@ -26,7 +26,7 @@ session_start();
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Custom CSS -->
     <link href="../css/css/style.min.css" rel="stylesheet">
-
+        
 
 <style type="text/css">
 .cart{
