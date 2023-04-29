@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4049D7;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.wrapper header{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.wrapper form{
+    height: 167px;
+    display: flex;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #4049D7;
+}
+form :where(i, p){
+    color: #4049D7;
+}
+form i{
+    font-size: 50px;
+}
+form p{
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <h1>Verifikasi Profile  </h1>
+    <p>Upload file sesuai ketentuan dan tunggu beberapa saat untuk proses verifikasi yang dilakukan admin.</p>
+    <hr>
+
+    <label for="nama"><b>Nama Lengkap</b></label>
+    <input type="text" name="nama" id="nama" required>
+   
+    <label for="tanggal"><b>Tanggal Lahir</b></label>
+    <input type="text" name="tanggal" id="tanggal" required>
+   
+    <label for="nik"><b>NIK</b></label>
+    <input type="text" name="nik" id="nik" required>
+   
+    <label for="sex"><b>Jenis Kelamin</b></label>
+    <input type="text" name="sex" id="sex" required>
+   
+    <label for="telp"><b>Nomor Telepon</b></label>
+    <input type="text" name="telp" id="telp" required>
+   
+    <label for="email"><b>Email</b></label>
+    <input type="text" name="email" id="email" required>
+   
+    <label for="bb"><b>Berat Badan (kg)</b></label>
+    <input type="text" name="bb" id="bb" required>
+   
+    <label for="tb"><b>Tinggi Badan (cm)</b></label>
+    <input type="text" name="tb" id="tb" required>
+
+    <div class="wrapper">
+        <header>Upload KTP (PNG/JPG/JPEG)</header>
+        <form action="#">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click here or drop file to upload</p>
+        </form>
+    </div>
+ 
+    <button type="submit" class="registerbtn">Ajukan Verifikasi</button>
+  </div>
+  
+</form>
+
+</body>
+</html>
