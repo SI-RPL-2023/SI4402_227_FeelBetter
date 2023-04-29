@@ -38,7 +38,8 @@ Route::get('/artikelTertulis', [UserController::class, 'artikelTertulis']);
 Route::get('/tulisArtikel', [UserController::class, 'tulisArtikel']);
 Route::post('/tulisArtikel', [UserController::class, 'postArticles']);
 Route::get('/artikel/{id}', [UserController::class, 'bacaArtikel']);
-
+Route::get('/bookingTerapis', [UserController::class, 'bookingTerapis']);
+Route::get('/appointment', [UserController::class, 'appointment']);
 
 // controller halaman admin
 Route::get('/admin/dashboard', [AdminController::class, 'Dashboard']);

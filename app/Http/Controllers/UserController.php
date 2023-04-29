@@ -158,4 +158,10 @@ class UserController extends Controller
     public function contactUs(){
         return view('pages.front-end.contactUs');
     }
+    public function bookingTerapis(){
+        return view('pages.front-end.bookingTerapis');
+    }
+    public function appointment(){
+        return view('pages.front-end.appointment');
+    }
 }
