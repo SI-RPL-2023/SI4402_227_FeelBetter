@@ -23,28 +23,35 @@
     <section class="doctor-profile container mt-4">
         <div class="profile-card container">
           <img src="{{url('asset/front-end/img/doctor1.jpg')}}" alt="Doctor 1">
-          <h2>Dr. Claudia Stephani</h2>
+          <h2>Dr. {{$dokterTerpilih -> nama_lengkap}}</h2>
           <p>Psikolog Militer</p>
           <p>Experience: 10 years</p>
-          <p>Dr. Stephani adalah seorang Dokter Spesialis Kebidanan Kandungan yang aktif melayani pasien di RS Stella Maris Makassar. dr.stephani mendapatkan gelar kedokteran setelah menamatkan pendidikan di Universitas Hasanuddin, Makassar.
-            Beliau yang tergabung dalam Ikatan Dokter Indonesia (IDI) dan Perkumpulan Obstetri dan Ginekologi Indonesia (POGI) bisa memberikan layanan konsultasi medis terkait kesehatan mental.
-            Harga yang tertera merupakan biaya konsultasi dokter, belum termasuk tindakan lain dan biaya admin dari RS/Klinik (apabila ada).</p>
+          <p>Dr. {{$dokterTerpilih -> nama_lengkap}} adalah seorang psikolog militer yang ahli dalam kesehatan mental dan kejiwaan prajurit militer dan keluarga mereka. Dia membantu mengatasi masalah kejiwaan seperti trauma, depresi, stres, dan kekerasan melalui terapi kelompok dan konseling individu. Dr. {{$dokterTerpilih -> nama_lengkap}} diakui sebagai ahli psikologi militer yang komitmen memberikan layanan kesehatan mental yang berkualitas tinggi.</p>
         </div>
         
         <div class="appointment-form">
-          <h3>Book an Appointment</h3>
-          <h4>Rs FeelBetter Jakarta</h4>
-          <p>kota jakarta, jakarta Selatan</p>
-          <p style="color: red;">Bayar di rumah sakit</p>
-          <b><p>Rp230.000</p></b>
-          <form action="#">
-            <label for="date">Pilih tanggal dan waktu kunjungan:</label>
-            <input type="date" id="date" name="date" required>
+          <h3 class="fw-bold fs-2">Book an Appointment</h3>
+          <h4 class="fw-light">Rs FeelBetter Jakarta</h4>
+          <p class="fw-light">kota jakarta, jakarta Selatan</p>
+          <hr>
+          <form action="/appointment" method="post" enctype="multipart/form-data">
+            @csrf
+            <label for="date">Biaya Konsultasi</label>
+            <input type="text" readonly class="form-control-plaintext fw-bold text-danger border-light" value="Rp. {{number_format(230000,0)}}">
+            <input type="text" name="biaya_konsultasi" value="230000" class="d-none">
+            <input type="text" name="nama_dokter" value="{{$dokterTerpilih -> nama_lengkap}}" class="d-none">
+
+            <label for="date">Ajukan tanggal berkonsultasi</label>
+            <input type="date" id="date" name="tanggal_konsultasi" required>
             
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
-            
-            <input type="submit" value="Buat Janji">
+            <label for="time">Ajukan jam berkonsultasi:</label>
+            <input type="time" id="time" name="jam_konsultasi" required>
+
+            <label for="time">Apa yang membuat bapak/ibu merasa tertekan?</label>
+            <textarea name="keluhan" id="" cols="30" rows="10" placeholder="tolong ceritakan apa yang bapak/ibu alami sehingga merasa tertekan sampai saat ini...."></textarea>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="submit">Buat janji</button>
+            </div>
           </form>
         </div>
       </section>

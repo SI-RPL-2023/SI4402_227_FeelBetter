@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Article;
 use App\Models\Patient;
+use App\Models\Service;
 use App\Models\Therapist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -159,9 +161,59 @@ class UserController extends Controller
         return view('pages.front-end.contactUs');
     }
     public function bookingTerapis(){
-        return view('pages.front-end.bookingTerapis');
+        $daftarDokter = Therapist::all();
+        return view('pages.front-end.bookingTerapis', compact(['daftarDokter']));
     }
-    public function appointment(){
-        return view('pages.front-end.appointment');
+    public function appointment($id){
+        $dokterTerpilih = Therapist::find($id);
+        return view('pages.front-end.appointment', compact(['dokterTerpilih']));
     }
+    public function makingAppointment(Request $request){
+        $makeAppointment = Appointment::create([
+            'nama_pasien' => Auth::user()->name,
+            'nama_dokter' => $request->nama_dokter,
+            'tanggal_konsultasi' => $request->tanggal_konsultasi,
+            'jam_konsultasi' => $request->jam_konsultasi,
+            'keluhan' => $request->keluhan,
+            'biaya_konsultasi' => $request->biaya_konsultasi,
+            'confirmation' => 'mohon menunggu persetujuan dokter terapis'
+        ]);
+        if($makeAppointment){
+            return redirect('/sukses');
+        } 
+    }
+    public function transaksi(){
+        $pendingConfirmation = Appointment::where('nama_dokter', Auth::user()->name)->get();
+        return view('pages.front-end.TransaksiTerapis', compact(['pendingConfirmation']));
+    }
+    public function services(){
+        $daftarLayanan = Service::all();
+        return view('pages.front-end.kategoriContent', compact(['daftarLayanan']));
+    }
+    public function article(Request $request){
+        $cari = $request->cari;
+        $daftarArtikel = Article::where('judul_artikel', 'LIKE', '%'. $cari. '%')->paginate(10);
+        return view('pages.front-end.listKonten', compact(['daftarArtikel']));
+    }
+    public function sukses(){
+        return view('pages.front-end.sukses');
+    }
+    public function konfirmasiKonsultasi($id){
+        $konfirmasiKonsultasi = Appointment::find($id);
+        return view('pages.front-end.konfirmasiKonsultasi', compact(['konfirmasiKonsultasi']));
+    }
+    public function konsultasiDikonfirmasi(Request $request, $id){
+        $statusconfirmation = Appointment::find($id);
+        $statusconfirmation->update($request->except('_token'));
+        if($statusconfirmation){
+        Session::flash('status', 'success');
+        Session::flash('message', 'waktu dikonfirmmasi');
+        return redirect('konfirmasiKonsultasi/'.$id);
+        } else {
+            Session::flash('status', 'failed');
+            Session::flash('message', 'waktu gagal dikonfirmasi');
+            return redirect('konfirmasiKonsultasi/'.$id);
+        }
+    }
+    
 }

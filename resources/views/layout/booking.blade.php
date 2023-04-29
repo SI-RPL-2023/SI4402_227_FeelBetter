@@ -16,7 +16,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="{{url('asset/front-end/css/style.css')}}" />
+     <link rel="stylesheet" href="{{url('asset/front-end/css/booking.css')}}" />
     <!-- font awesome -->
     <link href="{{url ('asset/back-end/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 </head>
@@ -41,17 +41,6 @@
   document.getElementById('submitBtn').addEventListener('click', function() {
     tinymce.triggerSave(); // Save content before form submit
   });
-</script>
-<script>
-  var toastTrigger = document.getElementById('liveToastBtn')
-  var toastLiveExample = document.getElementById('liveToast')
-  if (toastTrigger) {
-    toastTrigger.addEventListener('click', function () {
-      var toast = new bootstrap.Toast(toastLiveExample)
-
-      toast.show()
-    })
-  }
 </script>
 </body>
 </html>

@@ -13,4 +13,8 @@ class Therapist extends Model
     public function user(){
         return $this->hasOne(User::class, 'id_user', 'id');
     }
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'id_terapis', 'id');
+    }
 }

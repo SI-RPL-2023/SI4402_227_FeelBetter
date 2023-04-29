@@ -13,4 +13,8 @@ class Article extends Model
     public function user(){
         return $this->hasOne(User::class, 'id_user', 'id');
     }
+    public function therapist()
+    {
+        return $this->belongsTo(User::class, 'id_terapis', 'id');
+    }
 }

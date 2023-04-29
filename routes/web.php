@@ -39,7 +39,15 @@ Route::get('/tulisArtikel', [UserController::class, 'tulisArtikel']);
 Route::post('/tulisArtikel', [UserController::class, 'postArticles']);
 Route::get('/artikel/{id}', [UserController::class, 'bacaArtikel']);
 Route::get('/bookingTerapis', [UserController::class, 'bookingTerapis']);
-Route::get('/appointment', [UserController::class, 'appointment']);
+Route::get('/appointment/{id}', [UserController::class, 'appointment']);
+Route::post('/appointment', [UserController::class, 'makingAppointment']);
+Route::get('/daftarJanjiTemu', [UserController::class, 'transaksi']);
+Route::get('/konfirmasiKonsultasi/{id}', [UserController::class, 'konfirmasiKonsultasi']);
+Route::put('/konfirmasiKonsultasi/{id}', [UserController::class, 'konsultasiDikonfirmasi']);
+Route::get('/services', [UserController::class, 'services']);
+Route::get('/article', [UserController::class, 'article']);
+Route::get('/sukses', [UserController::class, 'sukses']);
+
 
 // controller halaman admin
 Route::get('/admin/dashboard', [AdminController::class, 'Dashboard']);

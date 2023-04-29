@@ -34,7 +34,8 @@
             <h4 class="fw-bold fs-3 d-flex align-items-center summary">20+ <span class="fw-light fs-5 text-black ps-1">awards received</span></h4>
           </div>
           <div class="col-sm-3 d-flex justify-content-md-end">
-          <button type="button" class="btn btn-primary btn-daftar"  onclick="event.preventDefault(); location.href='{{ url('contactUs') }}';">contact us</button>
+          <button type="button" class="btn btn-primary btn-daftar" onclick="event.preventDefault(); location.href='#contactForm';">contact us</button>
+
           </div>
         </div>
       </div>
@@ -143,7 +144,7 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell me about your question"></textarea>
               </div>
               <div class="col d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-contact mb-3">Submit</button>
+                <button type="button" class="btn btn-primary btn-contact mb-3" id="liveToastBtn">Submit</button>
               </div>
             </form>
           </div>
@@ -151,6 +152,7 @@
       </div>
     </section>
     <!-- end contact form -->
+    @include('parts.user.toast')
 
     <!-- footer -->
     <div class="mt-5">
