@@ -39,6 +39,10 @@ class UserController extends Controller
     }
     public function verifikasiProfile(Request $request){
         if (Auth::user()->role->name == 'Pasien') {
+        // Cari data pasien berdasarkan email user yang sedang login
+        $patient = Patient::where('email', Auth::user()->email)->first();
+        // Jika data pasien belum ada, maka buat baru
+        if (!$patient) {
             // upload foto KTP
             $ekstensiKTP = $request->file('foto_ktp')->clientExtension();
             $fileFotoKTP = Auth::user()->name.'-'.now()->timestamp.'-'.'KTP'.'.'.$ekstensiKTP;
@@ -46,7 +50,7 @@ class UserController extends Controller
             $request['foto_ktp'] = $fileFotoKTP;
 
             // insert database
-            $verificationProfile = Patient::create([
+            $patient = Patient::create([
                 'nama_lengkap' => Auth::user()->name,
                 'tanggal_lahir' => $request->tanggal_lahir,
                 'NIK' => 'mohon tunggu validasi dari pihak admin',
@@ -57,7 +61,7 @@ class UserController extends Controller
                 'tinggi_badan' => $request->tinggi_badan,
                 'foto_ktp' => $fileFotoKTP,
             ]);
-            if($verificationProfile){
+            if($patient){
                 Session::flash('status', 'success');
                 Session::flash('message', 'Proses Verifikasi/update berhasil diakukan');
                 return redirect('/profil');
@@ -67,14 +71,42 @@ class UserController extends Controller
                 return redirect('/profil');
             }
         } else {
-          // upload surat str
-            $ekstensiSuratStr = $request->file('surat_str')->clientExtension();
-            $fileFotoSuratStr = Auth::user()->name.'-'.now()->timestamp.'-'.'surat-str'.'.'.$ekstensiSuratStr;
-            $request->file('surat_str')->storeAs('images', $fileFotoSuratStr);
-            $request['surat_str'] = $fileFotoSuratStr;
+            // Jika data pasien sudah ada, maka lakukan update, upload foto KTP
+            $ekstensiKTP = $request->file('foto_ktp')->clientExtension();
+            $fileFotoKTP = Auth::user()->name.'-'.now()->timestamp.'-'.'KTP'.'.'.$ekstensiKTP;
+            $request->file('foto_ktp')->storeAs('images', $fileFotoKTP);
+            $request['foto_ktp'] = $fileFotoKTP;
+
+            $patient->update([
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'berat_badan' => $request->berat_badan,
+                'tinggi_badan' => $request->tinggi_badan,
+                'foto_ktp' => $fileFotoKTP,
+            ]);
+                if($patient){
+                    Session::flash('status', 'success');
+                    Session::flash('message', 'Proses Verifikasi/update berhasil diakukan');
+                    return redirect('/profil');
+                } else {
+                    Session::flash('status', 'failed');
+                    Session::flash('message', 'Proses Verifikasi/update gagal diakukan');
+                    return redirect('/profil');
+                }
+            }
+        } else{
+        // Cari data terapis berdasarkan email user yang sedang login
+        $terapis = Therapist::where('email', Auth::user()->email)->first();
+        // Jika data terapis belum ada, maka buat baru
+        if (!$terapis) {
+            // upload foto STR
+            $ekstensiSTR = $request->file('surat_str')->clientExtension();
+            $fileFotoSuratSTR = Auth::user()->name.'-'.now()->timestamp.'-'.'surat-str'.'.'.$ekstensiSTR;
+            $request->file('surat_str')->storeAs('images', $fileFotoSuratSTR);
+            $request['surat_str'] = $fileFotoSuratSTR;
 
             // insert database
-            $verificationProfile = Therapist::create([
+            $terapis = Therapist::create([
                 'nama_lengkap' => Auth::user()->name,
                 'tanggal_lahir' => $request->tanggal_lahir,
                 'nomor_str' => 'mohon tunggu validasi dari pihak admin',
@@ -83,9 +115,9 @@ class UserController extends Controller
                 'email' => Auth::user()->email,
                 'berat_badan' => $request->berat_badan,
                 'tinggi_badan' => $request->tinggi_badan,
-                'surat_str' => $fileFotoSuratStr,
+                'surat_str' => $fileFotoSuratSTR,
             ]);
-            if($verificationProfile){
+            if($terapis){
                 Session::flash('status', 'success');
                 Session::flash('message', 'Proses Verifikasi/update berhasil diakukan');
                 return redirect('/profil');
@@ -93,7 +125,31 @@ class UserController extends Controller
                 Session::flash('status', 'failed');
                 Session::flash('message', 'Proses Verifikasi/update gagal diakukan');
                 return redirect('/profil');
-            }  
+            }
+        } else {
+            // upload foto STR
+            $ekstensiSTR = $request->file('surat_str')->clientExtension();
+            $fileFotoSuratSTR = Auth::user()->name.'-'.now()->timestamp.'-'.'surat-str'.'.'.$ekstensiSTR;
+            $request->file('surat_str')->storeAs('images', $fileFotoSuratSTR);
+            $request['surat_str'] = $fileFotoSuratSTR;
+
+            $terapis->update([
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'berat_badan' => $request->berat_badan,
+                'tinggi_badan' => $request->tinggi_badan,
+                'surat_str' => $fileFotoSuratSTR,
+            ]);
+                if($terapis){
+                    Session::flash('status', 'success');
+                    Session::flash('message', 'Proses Verifikasi/update berhasil diakukan');
+                    return redirect('/profil');
+                } else {
+                    Session::flash('status', 'failed');
+                    Session::flash('message', 'Proses Verifikasi/update gagal diakukan');
+                    return redirect('/profil');
+                }
+            }
         }
     }
     public function updateProfile(Request $request){
