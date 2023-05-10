@@ -271,5 +271,7 @@ class UserController extends Controller
             return redirect('konfirmasiKonsultasi/'.$id);
         }
     }
-    
+    public function aboutus(){
+        return view('pages.front-end.aboutUs');
+    }
 }

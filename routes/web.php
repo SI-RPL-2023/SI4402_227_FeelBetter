@@ -47,6 +47,7 @@ Route::put('/konfirmasiKonsultasi/{id}', [UserController::class, 'konsultasiDiko
 Route::get('/services', [UserController::class, 'services']);
 Route::get('/article', [UserController::class, 'article']);
 Route::get('/sukses', [UserController::class, 'sukses']);
+Route::get('/aboutus', [UserController::class, 'aboutus']);
 
 
 // controller halaman admin

@@ -10,7 +10,7 @@
             <a class="nav-link me-4" href="/">Home</a>
             <a class="nav-link me-4" href="/article">Article</a>
             <a class="nav-link me-4" href="/services">Service</a>
-            <a class="nav-link me-4" href="#about">about</a>
+            <a class="nav-link me-4" href="/aboutus">about</a>
       </div>  
       <button type="button" class="btn btn-primary btn-daftar"  onclick="event.preventDefault(); location.href='{{ url('register') }}';">Daftar</button>
       @endguest
@@ -28,7 +28,7 @@
           <a class="nav-link me-4" href="/services">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-4" href="/">About</a>
+          <a class="nav-link me-4" href="/aboutus">About</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link me-4 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,7 +68,7 @@
           <a class="nav-link me-4" href="/services">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-4" href="/">About</a>
+          <a class="nav-link me-4" href="/aboutus">About</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link me-4 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
