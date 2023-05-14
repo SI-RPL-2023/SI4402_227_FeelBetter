@@ -25,7 +25,7 @@ class UserController extends Controller
             $umur = $diff->y;
         }
             return view('pages.front-end.profile', compact('infoProfile', 'umur'));
-        } else{
+        } else {
             $infoProfile = Therapist::where('email', Auth::user()->email)->first();
             $umur = null;
         if(!empty($infoProfile->tanggal_lahir)) {

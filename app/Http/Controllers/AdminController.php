@@ -2,22 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
 use App\Models\Service;
+use App\Models\Therapist;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function Dashboard(){
-        return view('pages.back-end.dashboard');
+        $sumPengguna = Patient::count();
+        $sumTerapis = Therapist::count();
+        return view('pages.back-end.dashboard', compact('sumPengguna', 'sumTerapis'));
     }
     public function listAdmin(){
-        return view('pages.back-end.listAdmin');
+        $listAdmin = User::where('id_role', 1)->get();
+        return view('pages.back-end.listAdmin', compact('listAdmin'));
     }
     public function listUser(){
-        return view('pages.back-end.listUser');
+        $listUser = User::where('id_role', 2)->get();
+        $listPatient = Patient::all();
+        return view('pages.back-end.listUser', compact('listUser', 'listPatient'));
+    }
+    public function detailPengguna($id){
+        $detailPatient = Patient::find($id);
+        return view('pages.back-end.detailPengguna', compact('detailPatient'));
+    }
+    public function detailKTP($id){
+        $detailKTP = Patient::find($id);
+        return view('pages.back-end.detailKTP', compact('detailKTP'));
+    }
+    public function validasiPengguna($id){
+        $validasiPengguna = Patient::find($id);
+        return view('pages.back-end.validasiPengguna', compact('validasiPengguna'));
+    }
+    public function prosesValidasiPengguna(Request $request, $id){
+        $validasiPengguna = Patient::find($id);
+        $validasiPengguna->update($request->except('_token'));
+        return redirect('/admin/listUser');
     }
     public function listTerapis(){
-        return view('pages.back-end.listTerapis');
+        $listTerapis = User::where('id_role', 3)->get();
+        $daftarTerapis = Therapist::all();
+        return view('pages.back-end.listTerapis', compact('listTerapis', 'daftarTerapis'));
+    }
+    public function detailTerapis($id){
+        $detailTerapis = Therapist::find($id);
+        return view('pages.back-end.detailTerapis', compact('detailTerapis'));
+    }
+    public function detailSTR($id){
+        $detailSTR = Therapist::find($id);
+        return view('pages.back-end.detailSTR', compact('detailSTR'));
+    }
+    public function validasiTerapis($id){
+        $validasiTerapis = Therapist::find($id);
+        return view('pages.back-end.validasiTerapis', compact('validasiTerapis'));
+    }
+    public function prosesValidasiTerapis(Request $request, $id){
+        $validasiPengguna = Therapist::find($id);
+        $validasiPengguna->update($request->except('_token'));
+        return redirect('/admin/listTerapis');
     }
     public function janjiTemu(){
         return view('pages.back-end.janjiTemu');

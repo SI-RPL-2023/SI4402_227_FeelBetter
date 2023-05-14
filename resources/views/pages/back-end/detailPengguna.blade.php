@@ -3,11 +3,17 @@
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
+      <!-- page heading -->
+      <h1 class="h3 mb-3 text-gray-800">Detail pengguna {{$detailPatient -> nama_lengkap}}</h1>
         <!-- Content Row -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Daftar Terapis aktif
+                    <a href="/admin/listUser">
+                    <button type="button" class="btn btn-primary">
+                    Kembali
+                    </button>
+                  </a>
                 </h6>
             </div>
               <div class="card-body">
@@ -23,7 +29,10 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>No Telpon</th>
-                        <th>No STR</th>
+                        <th>NIK</th>
+                        <th>Tanggal lahir</th>
+                        <th>Jenis kelamin</th>
+                        <th>Berat - tinggi badan</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -32,25 +41,26 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>No Telpon</th>
-                        <th>No STR</th>
+                        <th>NIK</th>
+                        <th>Tanggal lahir</th>
+                        <th>Jenis kelamin</th>
+                        <th>Berat - tinggi badan</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
                     <tbody>   
-                      @foreach($listTerapis as $lt)
-                      @foreach($daftarTerapis as $dt)
                       <tr>
-                        <td>{{$lt -> name}}</td>
-                        <td>{{$lt -> email}}</td>
-                        <td>{{$lt -> phone_number}}</td>
-                        <td>{{$dt -> nomor_str}}</td>
+                        <td>{{$detailPatient -> nama_lengkap}}</td>
+                        <td>{{$detailPatient -> email}}</td>
+                        <td>{{$detailPatient -> nomor_telpon}}</td>
+                        <td>{{$detailPatient -> NIK}}</td>
+                        <td>{{$detailPatient -> tanggal_lahir}}</td>
+                        <td>{{$detailPatient -> jenis_kelamin}}</td>
+                        <td>{{$detailPatient -> berat_badan}} KG - {{$detailPatient -> tinggi_badan}} CM</td>
                         <td>
-                            <a href="/admin/detailTerapis/{{$dt -> id}}" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
-                            <a href="/admin/validasiTerapis/{{$dt -> id}}"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
+                            <a href="/admin/validasiPengguna/{{$detailPatient -> id}}"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
                         </td>  
                       </tr>
-                    @endforeach
-                    @endforeach
                     </tbody>
                   </table>
                 </div>

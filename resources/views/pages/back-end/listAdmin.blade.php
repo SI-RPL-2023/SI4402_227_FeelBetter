@@ -25,29 +25,26 @@
                   >
                     <thead>
                       <tr>
-                        <th>Username admin</th>
-                        <th>password admin</th>
-                        <th>Action</th>
+                        <th>Nama admin</th>
+                        <th>Email admin</th>
+                        <th>telpon admin</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>Username admin</th>
-                        <th>password admin</th>
-                        <th>Action</th>
+                        <th>Nama admin</th>
+                        <th>Email admin</th>
+                        <th>telpon admin</th>
                       </tr>
                     </tfoot>
                     <tbody>
-                        <!-- foreach($listPackage as $lp) -->
+                       @foreach($listAdmin as $la)
                       <tr>
-                        <td>raplay</td>
-                        <td>raplay</td>
-                        <td>
-                            <a href="/"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
-                            <a href="/" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
-                        </td>  
+                        <td>{{$la -> name}}</td>
+                        <td>{{$la -> email}}</td>
+                        <td>{{$la -> phone_number}}</td> 
                       </tr>
-                       <!-- endforeach -->
+                       @endforeach
                     </tbody>
                   </table>
                 </div>

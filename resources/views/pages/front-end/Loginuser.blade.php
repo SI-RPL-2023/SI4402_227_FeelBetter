@@ -19,6 +19,12 @@
                     <span class="h1 fw-bold">Hello Good People!</span>
                   </div>
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account.</h5>
+                    @if(Session::has('status'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{Session::get('message')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
                     <hr>
                   <div class="form-outline mb-2">
                     <label class="form-label" for="email">Email</label>

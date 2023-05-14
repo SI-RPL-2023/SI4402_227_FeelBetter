@@ -22,9 +22,8 @@
                       <tr>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>No Telpon</th>
-                        <th>Alamat</th>
+                        <th>NIK</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -32,31 +31,26 @@
                       <tr>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>No Telpon</th>
-                        <th>Alamat</th>
+                        <th>NIK</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
                     <tbody>   
-                      <!-- foreach($listTransaction as $lt) -->
+                      @foreach($listUser as $lu)
+                      @foreach($listPatient as $lp)
                       <tr>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                        <td>{{$lu -> name}}</td>
+                        <td>{{$lu -> email}}</td>
+                        <td>{{$lu -> phone_number}}</td>
+                        <td>{{$lp -> NIK}}</td>
                         <td>
-                           <form action="#" method="post">
-                            <a href="#" class="btn btn-success btn-circle btn-sm"><i class="fas fa-images"></i></a>
-                            <a href="#"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
-                            <!-- csrf
-                            method('delete') -->
-                            <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
-                          </form>
+                            <a href="/admin/detailPengguna/{{$lp -> id}}" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                            <a href="/admin/validasiPengguna/{{$lp -> id}}"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
                         </td>  
                       </tr>
-                    <!-- endforeach -->
+                    @endforeach
+                    @endforeach
                     </tbody>
                   </table>
                 </div>

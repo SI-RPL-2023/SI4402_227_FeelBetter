@@ -43,8 +43,7 @@ class AuthController extends Controller
         Session::flash('message', 'proses registrasi gagal');
         return redirect('/register');
     }
-    public function cekLoginUser(Request $request)
-    {   
+    public function cekLoginUser(Request $request){   
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
@@ -58,6 +57,21 @@ class AuthController extends Controller
         Session::flash('status', 'failed');
         Session::flash('message', 'proses login gagal');
         return redirect('/login');
+    }
+    public function cekLoginAdmin(Request $request){   
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ]);
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('/admin/dashboard');
+        }
+
+        Session::flash('status', 'failed');
+        Session::flash('message', 'proses login gagal');
+        return redirect('/LoginAdmin');
     }
      public function logout(Request $request){
         Auth::logout();

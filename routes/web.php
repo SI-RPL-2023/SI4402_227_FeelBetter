@@ -26,6 +26,7 @@ Route::post('/register', [AuthController::class, 'userRegister']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'cekLoginUser']);
 Route::get('/LoginAdmin', [AuthController::class, 'loginAdmin']);
+Route::post('/LoginAdmin', [AuthController::class, 'cekLoginAdmin']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 
@@ -57,6 +58,15 @@ Route::get('/admin/listUser', [AdminController::class, 'listUser']);
 Route::get('/admin/listTerapis', [AdminController::class, 'listTerapis']);
 Route::get('/admin/janjiTemu', [AdminController::class, 'janjiTemu']);
 Route::get('/admin/pembayaran', [AdminController::class, 'pembayaran']);
+Route::get('/admin/detailPengguna/{id}', [AdminController::class, 'detailPengguna']);
+Route::get('/admin/detailKTP/{id}', [AdminController::class, 'detailKTP']);
+Route::get('/admin/validasiPengguna/{id}', [AdminController::class, 'validasiPengguna']);
+Route::put('/admin/validasiPengguna/{id}', [AdminController::class, 'prosesValidasiPengguna']);
+
+Route::get('/admin/detailTerapis/{id}', [AdminController::class, 'detailTerapis']);
+Route::get('/admin/detailSTR/{id}', [AdminController::class, 'detailSTR']);
+Route::get('/admin/validasiTerapis/{id}', [AdminController::class, 'validasiTerapis']);
+Route::put('/admin/validasiTerapis/{id}', [AdminController::class, 'prosesValidasiTerapis']);
 
 // controller halaman manajemenen halaman layanan
 Route::get('/admin/daftarLayanan', [AdminController::class, 'daftarLayanan']);
