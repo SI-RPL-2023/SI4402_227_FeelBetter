@@ -15,10 +15,10 @@
                 <div class="card-body">
                     <div class="card-body little-profile text-center">
                         <div class="round m-auto">
-                            <img src="https://i.pinimg.com/564x/24/d1/93/24d19367bf659c3a183a27e4a31de19e.jpg" class="rounded-circle" height="150px" width="150px"/>
+                            <img src="{{url('asset/front-end/img/profile.png')}}" class="rounded-circle" height="150px" width="150px"/>
                         </div>
-                        <h3 class="mt-3 text-white">Dr. {{Auth::user()->name}}</h3>
-                        <p class="mt-2 text-white">{{Auth::user()->email}} | ID terapis: {{Auth::user()->id}}</p>
+                        <h3 class="mt-3 text-white">{{Auth::user()->name}}</h3>
+                        <p class="mt-2 text-white">{{Auth::user()->email}} | ID pengguna: {{Auth::user()->id}}</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <div class="d-md-flex">
                         <div>
-                            <h4 class="card-title fw-bold text-capitalize">Daftar janji temu</h4>
+                            <h4 class="card-title fw-bold text-capitalize">Riwayat konsultasi</h4>
                         </div>
                         <div class="ms-auto"></div>
                     </div>
@@ -44,13 +44,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                @foreach($pendingConfirmation as $pc)
-                                    <td>{{$pc -> nama_pasien}}</td>
-                                    <td>{{$pc -> tanggal_konsultasi}}</td>
-                                    <td>{{$pc -> jam_konsultasi }}</td>
+                                @foreach($riwayatkonsultasi as $rk)
+                                    <td>{{$rk -> nama_pasien}}</td>
+                                    <td>{{$rk -> tanggal_konsultasi}}</td>
+                                    <td>{{$rk -> jam_konsultasi }}</td>
                                     <td>
-                                        <a href="/konfirmasiKonsultasi/{{$pc -> id}}"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
-                                        <a href="/" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                        <a href="/detailKonsultasi/{{$rk -> id}}" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
                                     </td>  
                                 </tr>
                                 @endforeach

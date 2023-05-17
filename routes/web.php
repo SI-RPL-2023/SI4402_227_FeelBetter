@@ -43,6 +43,8 @@ Route::get('/bookingTerapis', [UserController::class, 'bookingTerapis']);
 Route::get('/appointment/{id}', [UserController::class, 'appointment']);
 Route::post('/appointment', [UserController::class, 'makingAppointment']);
 Route::get('/daftarJanjiTemu', [UserController::class, 'transaksi']);
+Route::get('/riwayatkonsultasi', [UserController::class, 'riwayatkonsultasi']);
+Route::get('/detailKonsultasi/{id}', [UserController::class, 'detailKonsultasi']);
 Route::get('/konfirmasiKonsultasi/{id}', [UserController::class, 'konfirmasiKonsultasi']);
 Route::put('/konfirmasiKonsultasi/{id}', [UserController::class, 'konsultasiDikonfirmasi']);
 Route::get('/services', [UserController::class, 'services']);

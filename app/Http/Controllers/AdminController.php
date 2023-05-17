@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\Service;
 use App\Models\Therapist;
@@ -64,7 +65,8 @@ class AdminController extends Controller
         return redirect('/admin/listTerapis');
     }
     public function janjiTemu(){
-        return view('pages.back-end.janjiTemu');
+        $janjiTemu = Appointment::all();
+        return view('pages.back-end.janjiTemu', compact('janjiTemu'));
     }
     public function pembayaran(){
         return view('pages.back-end.pembayaran');

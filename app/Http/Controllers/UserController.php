@@ -232,7 +232,9 @@ class UserController extends Controller
             'jam_konsultasi' => $request->jam_konsultasi,
             'keluhan' => $request->keluhan,
             'biaya_konsultasi' => $request->biaya_konsultasi,
-            'confirmation' => 'mohon menunggu persetujuan dokter terapis'
+            'konsultasi_bersifat' => $request->konsultasi_bersifat,
+            'link_meet' => '',
+            'confirmation' => 'Mohon menunggu persetujuan dokter terapis'
         ]);
         if($makeAppointment){
             return redirect('/sukses');
@@ -273,5 +275,13 @@ class UserController extends Controller
     }
     public function aboutus(){
         return view('pages.front-end.aboutUs');
+    }
+    public function riwayatkonsultasi(){
+        $riwayatkonsultasi = Appointment::where('nama_pasien', Auth::user()->name)->get();
+        return view('pages.front-end.riwayatKonsultasi', compact('riwayatkonsultasi'));
+    }
+    public function detailKonsultasi($id){
+        $detailKonsultasi = Appointment::find($id);
+        return view('pages.front-end.detailKonsultasi', compact('detailKonsultasi'));
     }
 }

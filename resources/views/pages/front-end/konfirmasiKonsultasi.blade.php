@@ -44,25 +44,30 @@
                 <div class="card-body">
                     <div class="d-flex">
                         <div>
-                            <h4 class="card-title fw-bold text-capitalize mt-4 mb-4">Konfirmasi waktu</h4>
+                            <h4 class="card-title fw-bold text-capitalize mt-4 mb-4">Janji temu - <span class="fw-light">{{$konfirmasiKonsultasi -> nama_pasien}}</span></h4>
+                            <hr width="100%">
                         </div>
-                        <div class="ms-auto"></div>
                     </div>
                     <div class="table-responsive">
                         <table class="table">
                             <form method="POST" action="" class="form-input" >
-                    @method('PUT')
-                    @csrf
-                    <div class="mb-4">
-                        <select id="verification" class="form-select" name="confirmation">
-                            <option disabled selected value="">pilih status konfirmasi</option>
-                            <option value="mohon menunggu persetujuan dokter terapis" @if($konfirmasiKonsultasi -> confirmation == "mohon menunggu persetujuan dokter terapis") selected @endif>mohon menunggu persetujuan dokter terapis</option>
-                            <option value="Mohon mengganti tanggal konsultasi" @if($konfirmasiKonsultasi -> confirmation == "Mohon mengganti tanggal konsultasi") selected @endif>Mohon mengganti tanggal konsultasi</option>
-                            <option value="Disetujui" @if($konfirmasiKonsultasi -> confirmation == "Disetujui") selected @endif>Disetujui</option>
-                        </select>
-                    </div>
-                      <button type="submit" class="btn btn-primary">Konfirmasi</button>
-                  </form>           
+                                @method('PUT')
+                                @csrf
+                                <div class="mb-4">
+                                    <label for="inputNamaMobil" class="form-label fw-bold">Konfirmasi janji temu</label>
+                                    <select id="verification" class="form-select" name="confirmation">
+                                        <option disabled selected value="">pilih status konfirmasi</option>
+                                        <option value="mohon menunggu persetujuan dokter terapis" @if($konfirmasiKonsultasi -> confirmation == "mohon menunggu persetujuan dokter terapis") selected @endif>mohon menunggu persetujuan dokter terapis</option>
+                                        <option value="Mohon mengganti tanggal konsultasi" @if($konfirmasiKonsultasi -> confirmation == "Mohon mengganti tanggal konsultasi") selected @endif>Mohon mengganti tanggal konsultasi</option>
+                                        <option value="Disetujui" @if($konfirmasiKonsultasi -> confirmation == "Disetujui") selected @endif>Disetujui</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="inputNamaMobil" class="form-label fw-bold">Link meet konsultasi</label>
+                                    <input type="text" name="link_meet" id="email" required class="form-control" value="{{$konfirmasiKonsultasi -> link_meet}}" placeholder="masukan link meet untuk konsultasi dengan pasien" />
+                                </div>
+                                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                            </form>           
                         </table>
                     </div>
                 </div>

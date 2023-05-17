@@ -20,44 +20,41 @@
                   >
                     <thead>
                       <tr>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>No Telpon</th>
-                        <th>Alamat</th>
+                        <th>Nama pasien</th>
+                        <th>Nama terapis</th>
+                        <th>Tanggal konsultasi</th>
+                        <th>Jam konsultasi</th>
+                        <th>Biaya konsultasi</th>
+                        <th>Status konsultasi</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>No Telpon</th>
-                        <th>Alamat</th>
+                        <th>Nama pasien</th>
+                        <th>Nama terapis</th>
+                        <th>Tanggal konsultasi</th>
+                        <th>Jam konsultasi</th>
+                        <th>Biaya konsultasi</th>
+                        <th>Status konsultasi</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
                     <tbody>   
-                      <!-- foreach($listTransaction as $lt) -->
+                      @foreach($janjiTemu as $jt)
                       <tr>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                        <td>{{$jt -> nama_pasien}}</td>
+                        <td>Dr. {{$jt -> nama_dokter}}</td>
+                        <td>{{$jt -> tanggal_konsultasi}}</td>
+                        <td>{{$jt -> jam_konsultasi}}</td>
+                        <td>Rp. {{number_format($jt -> biaya_konsultasi,0)}}</td>
+                        <td>{{$jt -> confirmation}}</td>
                         <td>
-                           <form action="#" method="post">
                             <a href="#" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
                             <a href="#" class="btn btn-success btn-circle btn-sm"><i class="fas fa-images"></i></a>
-                            <a href="#"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
-                            <!-- csrf
-                            method('delete') -->
-                            <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
-                          </form>
                         </td>  
                       </tr>
-                    <!-- endforeach -->
+                    @endforeach
                     </tbody>
                   </table>
                 </div>

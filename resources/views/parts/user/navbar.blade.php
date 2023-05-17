@@ -36,6 +36,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/bookingTerapis">Booking Terapis</a></li>
+            <li><a class="dropdown-item" href="/riwayatkonsultasi">Daftar Janji Temu</a></li>
             <li><a class="dropdown-item" href="/">Chat</a></li>
           </ul>
         </li>

@@ -47,7 +47,14 @@
             <label for="time">Ajukan jam berkonsultasi:</label>
             <input type="time" id="time" name="jam_konsultasi" required>
 
-            <label for="time">Apa yang membuat bapak/ibu merasa tertekan?</label>
+            <label for="time">ingin konsultasi secara:</label>
+              <select id="verification" class="form-select" name="konsultasi_bersifat">
+                  <option disabled selected value="">konsultasi secara</option>
+                  <option value="online">Online</option>
+                  <option value="offline">Offline</option>
+              </select>
+
+            <label for="time" class="mt-3">Apa yang membuat bapak/ibu merasa tertekan?</label>
             <textarea name="keluhan" id="" cols="30" rows="10" placeholder="tolong ceritakan apa yang bapak/ibu alami sehingga merasa tertekan sampai saat ini...."></textarea>
             <div class="d-grid gap-2">
               <button class="btn btn-primary" type="submit">Buat janji</button>
