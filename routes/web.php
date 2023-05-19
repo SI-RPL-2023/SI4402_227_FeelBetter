@@ -51,7 +51,7 @@ Route::get('/services', [UserController::class, 'services']);
 Route::get('/article', [UserController::class, 'article']);
 Route::get('/sukses', [UserController::class, 'sukses']);
 Route::get('/aboutus', [UserController::class, 'aboutus']);
-
+Route::get('/bookSum', [UserController::class, 'bookSum']);
 
 // controller halaman admin
 Route::get('/admin/dashboard', [AdminController::class, 'Dashboard']);

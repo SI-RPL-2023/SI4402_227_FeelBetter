@@ -37,6 +37,9 @@ class UserController extends Controller
             return view('pages.front-end.profile', compact('infoProfile', 'umur'));
         }
     }
+    public function bookSum(){
+        return view('pages.front-end.bookSum');
+    }
     public function verifikasiProfile(Request $request){
         if (Auth::user()->role->name == 'Pasien') {
         // Cari data pasien berdasarkan email user yang sedang login
