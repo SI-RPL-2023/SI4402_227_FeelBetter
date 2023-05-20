@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <div class="d-md-flex">
                         <div>
-                            <h4 class="card-title fw-bold text-capitalize">Riwayat konsultasi</h4>
+                            <h4 class="card-title fw-bold text-capitalize">Riwayat Konsultasi Pasien</h4>
                         </div>
                         <div class="ms-auto"></div>
                     </div>
@@ -36,10 +36,10 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="border-top-0">Nama</th>
-                                    <th class="border-top-0">Tanggal konsultasi</th>
-                                    <th class="border-top-0">Jam konsultasi</th>
-                                    <th class="border-top-0">opsi</th>
+                                    <th class="border-top-0">Nama Pasien</th>
+                                    <th class="border-top-0">Tanggal Konsultasi</th>
+                                    <th class="border-top-0">Waktu Konsultasi</th>
+                                    <th class="border-top-0">Pilihan Konsultasi</th>
                                 </tr>
                             </thead>
                             <tbody>
