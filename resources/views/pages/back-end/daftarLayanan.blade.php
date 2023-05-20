@@ -5,14 +5,14 @@
     <div class="container-fluid">
       <a href="/admin/tambahLayanan">
         <button type="button" class="btn btn-primary mb-3">
-          Tambah Layanan
+          Tambahkan Layanan
         </button>
       </a>
         <!-- Content Row -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Daftar Layanan Tersedia
+                    Daftar Layanan Sudah Tersedia
                 </h6>
             </div>
               <div class="card-body">
