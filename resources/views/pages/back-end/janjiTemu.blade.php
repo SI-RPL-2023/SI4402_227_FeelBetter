@@ -7,7 +7,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Konsultasi Terdaftar
+                    Daftar Janji Temu Layanan Konsultasi
                 </h6>
             </div>
               <div class="card-body">
@@ -20,23 +20,23 @@
                   >
                     <thead>
                       <tr>
-                        <th>Nama pasien</th>
-                        <th>Nama terapis</th>
-                        <th>Tanggal konsultasi</th>
-                        <th>Jam konsultasi</th>
-                        <th>Biaya konsultasi</th>
-                        <th>Status konsultasi</th>
+                        <th>Nama Pasien</th>
+                        <th>Nama Terapis</th>
+                        <th>Tanggal Konsultasi</th>
+                        <th>Jam Konsultasi</th>
+                        <th>Biaya Konsultasi</th>
+                        <th>Status Konsultasi</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>Nama pasien</th>
-                        <th>Nama terapis</th>
-                        <th>Tanggal konsultasi</th>
-                        <th>Jam konsultasi</th>
-                        <th>Biaya konsultasi</th>
-                        <th>Status konsultasi</th>
+                        <th>Nama Pasien</th>
+                        <th>Nama Terapis</th>
+                        <th>Tanggal Konsultasi</th>
+                        <th>Jam Konsultasi</th>
+                        <th>Biaya Konsultasi</th>
+                        <th>Status Konsultasi</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
