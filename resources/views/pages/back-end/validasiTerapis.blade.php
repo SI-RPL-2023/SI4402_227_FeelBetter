@@ -30,7 +30,7 @@
                         <input
                         type="text"
                         class="form-control"
-                        placeholder="masukan nama paket..."
+                        placeholder="masukan keterangan"
                         name="nomor_str"
                         value="{{$validasiTerapis -> nomor_str}}"
                         required

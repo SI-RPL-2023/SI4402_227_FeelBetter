@@ -30,7 +30,7 @@
                         <input
                         type="text"
                         class="form-control"
-                        placeholder="masukan nama paket..."
+                        placeholder="masukan Keterangan"
                         name="NIK"
                         value="{{$validasiPengguna -> NIK}}"
                         required
