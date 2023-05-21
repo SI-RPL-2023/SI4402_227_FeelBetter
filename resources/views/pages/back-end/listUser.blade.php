@@ -8,7 +8,15 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
                     Daftar user aktif
-                </h6>
+                </h6>  
+            </div>
+            <div class="card-header py-3">
+                <a href="/ExportDataPatient">
+                    <button type="button" class="btn btn-success">
+                    <i class="fa fa-file-excel pr-2"></i>
+                    Export data patient
+                    </button>
+                  </a> 
             </div>
               <div class="card-body">
                 <div class="table-responsive">

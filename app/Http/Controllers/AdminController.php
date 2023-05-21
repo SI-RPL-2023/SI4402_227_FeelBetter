@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\JanjiTemuExport;
+use App\Exports\PatientExport;
+use App\Exports\TerapisExport;
 use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\Service;
 use App\Models\Therapist;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -24,6 +28,9 @@ class AdminController extends Controller
         $listUser = User::where('id_role', 2)->get();
         $listPatient = Patient::all();
         return view('pages.back-end.listUser', compact('listUser', 'listPatient'));
+    }
+    public function ExportDataPatient(){
+        return Excel::download(new PatientExport, 'DataPasien-feelbetter.xlsx');
     }
     public function detailPengguna($id){
         $detailPatient = Patient::find($id);
@@ -47,6 +54,9 @@ class AdminController extends Controller
         $daftarTerapis = Therapist::all();
         return view('pages.back-end.listTerapis', compact('listTerapis', 'daftarTerapis'));
     }
+    public function ExportDataTerapis(){
+        return Excel::download(new TerapisExport, 'DataTerapis-feelbetter.xlsx');
+    }
     public function detailTerapis($id){
         $detailTerapis = Therapist::find($id);
         return view('pages.back-end.detailTerapis', compact('detailTerapis'));
@@ -67,6 +77,9 @@ class AdminController extends Controller
     public function janjiTemu(){
         $janjiTemu = Appointment::all();
         return view('pages.back-end.janjiTemu', compact('janjiTemu'));
+    }
+    public function ExportDataJanjiTemu(){
+        return Excel::download(new JanjiTemuExport, 'DataJanjiTemu-feelbetter.xlsx');
     }
     public function pembayaran(){
         return view('pages.back-end.pembayaran');

@@ -10,6 +10,14 @@
                     Daftar Terapis aktif
                 </h6>
             </div>
+            <div class="card-header py-3">
+                <a href="/ExportDataTerapis">
+                    <button type="button" class="btn btn-success">
+                    <i class="fa fa-file-excel pr-2"></i>
+                    Export data terapis
+                    </button>
+                  </a> 
+            </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table

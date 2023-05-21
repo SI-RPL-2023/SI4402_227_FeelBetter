@@ -57,14 +57,16 @@ Route::get('/bookSum', [UserController::class, 'bookSum']);
 Route::get('/admin/dashboard', [AdminController::class, 'Dashboard']);
 Route::get('/admin/listAdmin', [AdminController::class, 'listAdmin']);
 Route::get('/admin/listUser', [AdminController::class, 'listUser']);
+Route::get('/ExportDataPatient', [AdminController::class, 'ExportDataPatient']);
+Route::get('/ExportDataTerapis', [AdminController::class, 'ExportDataTerapis']);
 Route::get('/admin/listTerapis', [AdminController::class, 'listTerapis']);
 Route::get('/admin/janjiTemu', [AdminController::class, 'janjiTemu']);
+Route::get('/ExportDataJanjiTemu', [AdminController::class, 'ExportDataJanjiTemu']);
 Route::get('/admin/pembayaran', [AdminController::class, 'pembayaran']);
 Route::get('/admin/detailPengguna/{id}', [AdminController::class, 'detailPengguna']);
 Route::get('/admin/detailKTP/{id}', [AdminController::class, 'detailKTP']);
 Route::get('/admin/validasiPengguna/{id}', [AdminController::class, 'validasiPengguna']);
 Route::put('/admin/validasiPengguna/{id}', [AdminController::class, 'prosesValidasiPengguna']);
-
 Route::get('/admin/detailTerapis/{id}', [AdminController::class, 'detailTerapis']);
 Route::get('/admin/detailSTR/{id}', [AdminController::class, 'detailSTR']);
 Route::get('/admin/validasiTerapis/{id}', [AdminController::class, 'validasiTerapis']);
