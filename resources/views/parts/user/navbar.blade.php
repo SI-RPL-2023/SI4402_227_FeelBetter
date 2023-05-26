@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav m-auto">
         <li class="nav-item">
-          <a class="nav-link me-4" aria-current="page" href="#">Home</a>
+          <a class="nav-link me-4" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-4" href="/article">Article</a>
@@ -60,7 +60,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav m-auto">
         <li class="nav-item">
-          <a class="nav-link me-4" aria-current="page" href="#">Home</a>
+          <a class="nav-link me-4" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-4" href="/article">Article</a>

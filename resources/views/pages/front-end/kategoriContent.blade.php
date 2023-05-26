@@ -25,4 +25,9 @@
     </div>
   </div>
   
+<!-- footer -->
+<div class="mt-5">
+    @include('parts.user.footer')
+</div>
+<!-- end  footer -->
 @endsection

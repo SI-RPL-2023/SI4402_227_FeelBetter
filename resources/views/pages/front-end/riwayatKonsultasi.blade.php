@@ -24,6 +24,19 @@
             </div>
         </div>
         <div class="col-lg-8">
+            @if(Session::has('status'))
+                    @if(Session::get('status') == 'success')
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{Session::get('message')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @elseif(Session::get('status') == 'failed')
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{Session::get('message')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                @endif
             <div class="card">
                 <div class="card-body">
                     <div class="d-md-flex">
@@ -40,6 +53,7 @@
                                     <th class="border-top-0">Tanggal Konsultasi</th>
                                     <th class="border-top-0">Waktu Konsultasi</th>
                                     <th class="border-top-0">Pilihan Konsultasi</th>
+                                    <th class="border-top-0">Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,8 +62,10 @@
                                     <td>{{$rk -> nama_pasien}}</td>
                                     <td>{{$rk -> tanggal_konsultasi}}</td>
                                     <td>{{$rk -> jam_konsultasi }}</td>
+                                    <td>{{$rk -> konsultasi_bersifat }}</td>
                                     <td>
                                         <a href="/detailKonsultasi/{{$rk -> id}}" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                        <a href="/bookSum/{{$rk -> id}}" class="btn btn-success btn-circle btn-sm"><i class="fas fa-file-invoice"></i></a>
                                     </td>  
                                 </tr>
                                 @endforeach

@@ -32,7 +32,7 @@
             @else
             <div class="mb-3">
               <label class="form-label">Nomor STR</label>
-              <input type="text" class="form-control" name="nomor_str" disabled readonly placeholder="{{ $infoProfile ? 'Silahkan upload Surat STR...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->NIK : '' }}">
+              <input type="text" class="form-control" name="nomor_str" disabled readonly placeholder="{{ $infoProfile ? 'Silahkan upload Surat STR...' : 'Harap melakukan verifikasi terlebih dahulu' }}" disabled value="{{ $infoProfile ? $infoProfile->nomor_str : '' }}">
             </div>
             @endif
             <div class="mb-3">

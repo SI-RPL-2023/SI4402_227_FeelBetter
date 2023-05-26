@@ -1,33 +1,12 @@
 @extends('layout.user-profile')
 @section('content')
-    <!-- navbar -->
+    <!-- navbar-->
+    @if (Auth::guest() || (Auth::check() && Auth::user()->isPasien()) || (Auth::check() && Auth::user()->isTerapis()) )
     <div class="container mt-4">
-    @include('parts.user.navbar-profil')
+      @include('parts.user.navbar')
     </div>
-    <!-- end  navbar -->
-
-    <!-- top head -->
-    <div id="head" class="container mt-3 d-flex justify-content-center align-items-center">
-            <div id="main">
-              <h5 class="fw-light">
-                Profil: <span class="fw-bold" style="letter-spacing: 0.07rem; color: #434242;">{{Auth::user()->name}}</span>
-              </h5>
-            </div>
-                <div class="dropdown me-3">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-book me-2" aria-hidden="true"></i>
-                    Artikel mu
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/artikelTertulis">Artikel tertulis</a></li>
-                    <li><a class="dropdown-item" href="/tulisArtikel">Tulis artikel</a></li>
-                  </ul>
-                </div>
-              <button class="btn btn-danger btn-log-profile" onclick="event.preventDefault(); location.href='{{ url('logout') }}';">Keluar</button>
-        </div>
-        </div>
-    </div>
-    <!-- end top head -->
+    @endif
+    <!-- end navbar -->
 
    <div class="container mt-4">
      <center><img src="{{ asset ('storage/images/'.$bacaArtikel -> foto_artikel) }}" alt="" width="1020px" height="300px"></center>
@@ -37,5 +16,11 @@
    </div>
 
     <!-- end daftar artikel tertulis -->
+
+<!-- footer -->
+<div class="mt-5">
+    @include('parts.user.footer')
+</div>
+<!-- end  footer -->
 
 @endsection

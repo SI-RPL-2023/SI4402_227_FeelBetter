@@ -50,11 +50,11 @@
                         <input type="text" disabled class="form-control" id="staticEmail" value="{{$detailKonsultasi -> confirmation}}">
                     </div>
                     <div class="mb-4">
-                        <label for="inputNamaMobil" class="form-label fw-bold">Link meet untuk konsultasu</label>
+                        <label for="inputNamaMobil" class="form-label fw-bold">Tempat untuk konsultasi</label>
                         <input type="text" disabled class="form-control" id="staticEmail" value="{{$detailKonsultasi -> link_meet}}">
                     </div>
                     <hr>
-                    <button type="submit" class="btn btn-primary w-100">Selesaikan pembayaran</button>
+                    <button class="btn btn-primary w-100" onclick="event.preventDefault(); location.href='{{ url('pembayaran/' . $detailKonsultasi->id) }}';">Selesaikan pembayaran</button>
                     @if($detailKonsultasi -> confirmation == "Mohon mengganti tanggal konsultasi")
                         <button type="submit" class="btn btn-outline-primary w-100">Ubah tanggal - jam konsultasi</button>
                     @endif

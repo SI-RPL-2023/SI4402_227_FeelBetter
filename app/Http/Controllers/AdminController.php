@@ -7,6 +7,7 @@ use App\Exports\PatientExport;
 use App\Exports\TerapisExport;
 use App\Models\Appointment;
 use App\Models\Patient;
+use App\Models\Payment;
 use App\Models\Service;
 use App\Models\Therapist;
 use App\Models\User;
@@ -82,7 +83,21 @@ class AdminController extends Controller
         return Excel::download(new JanjiTemuExport, 'DataJanjiTemu-feelbetter.xlsx');
     }
     public function pembayaran(){
-        return view('pages.back-end.pembayaran');
+        $daftarPembayaran = Payment::all();
+        return view('pages.back-end.pembayaran', compact('daftarPembayaran'));
+    }
+    public function detailPembayaran($id){
+        $detailPembayaran = Payment::find($id);
+        return view('pages.back-end.detailPembayaran', compact('detailPembayaran'));
+    }
+    public function validasiPembayaran($id){
+        $validasiPembayaran = Payment::find($id);
+        return view('pages.back-end.validasiPembayaran', compact('validasiPembayaran'));
+    }
+    public function prosesValidasiPembayaran(Request $request, $id){
+        $prosesValidasi = Payment::find($id);
+        $prosesValidasi->update($request->except('_token'));
+        return redirect('/admin/pembayaran');
     }
     public function daftarLayanan(){
         $daftarLayanan = Service::all();

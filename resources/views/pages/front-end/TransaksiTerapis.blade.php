@@ -50,7 +50,7 @@
                                     <td>{{$pc -> jam_konsultasi }}</td>
                                     <td>
                                         <a href="/konfirmasiKonsultasi/{{$pc -> id}}"class="btn btn-warning btn-circle btn-sm button-edit"><i class="fas fa-edit"></i></a>
-                                        <a href="/" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                        <a href="/detailJanjiTemu/{{$pc -> id}}" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
                                     </td>  
                                 </tr>
                                 @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Article;
 use App\Models\Patient;
+use App\Models\Payment;
 use App\Models\Service;
 use App\Models\Therapist;
 use Illuminate\Http\Request;
@@ -37,8 +38,9 @@ class UserController extends Controller
             return view('pages.front-end.profile', compact('infoProfile', 'umur'));
         }
     }
-    public function bookSum(){
-        return view('pages.front-end.bookSum');
+    public function bookSum($id){
+        $book = Appointment::find($id);
+        return view('pages.front-end.bookSum', compact('book'));
     }
     public function verifikasiProfile(Request $request){
         if (Auth::user()->role->name == 'Pasien') {
@@ -247,6 +249,10 @@ class UserController extends Controller
         $pendingConfirmation = Appointment::where('nama_dokter', Auth::user()->name)->get();
         return view('pages.front-end.TransaksiTerapis', compact(['pendingConfirmation']));
     }
+    public function detailJanjiTemu($id){
+        $detailJanjiTemu = Appointment::find($id);
+        return view('pages.front-end.detailTransaksiTerapis', compact(['detailJanjiTemu']));
+    }
     public function services(){
         $daftarLayanan = Service::all();
         return view('pages.front-end.kategoriContent', compact(['daftarLayanan']));
@@ -286,5 +292,32 @@ class UserController extends Controller
     public function detailKonsultasi($id){
         $detailKonsultasi = Appointment::find($id);
         return view('pages.front-end.detailKonsultasi', compact('detailKonsultasi'));
+    }
+    public function pembayaran($id){
+        $pembayaran = Appointment::find($id);
+        return view('pages.front-end.pembayaran', compact('pembayaran'));
+    }
+    public function create_payments(Request $request, $id){
+        $getappointment = Appointment::find($id);
+         // bukti pembayaran
+        $bukti_pembayaran = $request->file('bukti_pembayaran')->clientExtension();
+        $fileBuktiPembayaran = Auth::user()->name.'-'.now()->timestamp.'-'.'bukti pembayaran'.'.'.$bukti_pembayaran;
+        $request->file('bukti_pembayaran')->storeAs('images', $fileBuktiPembayaran);
+        $request['bukti_pembayaran'] = $fileBuktiPembayaran;
+        // create pembayaran
+        $create_payments = Payment::create([
+            'id_appointment' => $getappointment->id,
+            'bukti_pembayaran' => $fileBuktiPembayaran,
+            'validasi_pembayaran' => 'Pending'
+        ]);
+        if($create_payments){
+            Session::flash('status', 'success');
+            Session::flash('message', 'Pemmbayaran berhasil di upload');
+            return redirect('/riwayatkonsultasi');
+        } else {
+            Session::flash('status', 'failed');
+            Session::flash('message', 'Pembayaran gagal di upload');
+            return redirect('/riwayatkonsultasi');
+        }
     }
 }

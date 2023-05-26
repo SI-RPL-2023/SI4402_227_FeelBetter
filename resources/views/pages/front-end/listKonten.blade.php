@@ -31,10 +31,16 @@
 		<h5 class="card-title fw-bold">{{$da -> judul_artikel}}</h5>
 		<p class="card-text"><?php echo substr($da->isi_artikel,0,350)?>...</p>
 		<p class="fw-light fs-6">{{ $da->therapist->name }} - {{$da -> created_at}}</p>
-		<a href="#" class="btn btn-primary">Baca selengkapnya</a>
+		<a href="/artikel/{{$da -> id}}" class="btn btn-primary">Baca selengkapnya</a>
 		</div>
 	</div>
 	@endforeach
 </div>
+
+<!-- footer -->
+<div class="mt-5">
+    @include('parts.user.footer')
+</div>
+<!-- end  footer -->
 
 @endsection

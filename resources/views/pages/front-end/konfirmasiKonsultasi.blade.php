@@ -63,8 +63,8 @@
                                     </select>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="inputNamaMobil" class="form-label fw-bold">Link meet konsultasi</label>
-                                    <input type="text" name="link_meet" id="email" required class="form-control" value="{{$konfirmasiKonsultasi -> link_meet}}" placeholder="masukan link meet untuk konsultasi dengan pasien" />
+                                    <label for="inputNamaMobil" class="form-label fw-bold">Tempat untuk konsultasi</label>
+                                    <input type="text" name="link_meet" id="email" required class="form-control" value="{{$konfirmasiKonsultasi -> link_meet}}" placeholder="masukan link meet atau lokasi daerah untuk konsultasi dengan pasien" />
                                 </div>
                                     <button type="submit" class="btn btn-primary">Konfirmasi</button>
                             </form>           

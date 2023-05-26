@@ -17,6 +17,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="{{url('asset/front-end/css/style-profile.css')}}" />
+    <link rel="stylesheet" href="{{url('asset/front-end/css/style.css')}}" />
     <!-- font awesome -->
     <link href="{{url ('asset/back-end/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 </head>
